@@ -44,13 +44,12 @@ class Server {
       await this.getRankingsFromServer();
     }
 
-    const sorted = [...this.cache].sort((a, b) =>
-      order === "ASC" ? a[sort] - b[sort] : b[sort] - a[sort]
-    );
-    const paginated = sorted.slice(offset, offset + limit);
+    const data = [...this.cache]
+      .sort((a, b) => (order === "ASC" ? a[sort] - b[sort] : b[sort] - a[sort]))
+      .slice(offset, offset + limit);
 
     return {
-      data: paginated,
+      data,
       pagination: {
         total: this.cache.length,
         offset,

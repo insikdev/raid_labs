@@ -140,10 +140,8 @@ function App() {
         total={rankingData.pagination.total}
         clickPrev={handlePrevPageClick}
         clickNext={handleNextPageClick}
-        hasNext={
-          queryParams.offset + queryParams.limit < rankingData.pagination.total
-        }
-        hasPrev={queryParams.offset !== 0}
+        hasNext={rankingData.pagination.hasNextPage}
+        hasPrev={queryParams.offset >= queryParams.limit}
         changeLimit={handleItemsPerPageChange}
       />
     </section>
