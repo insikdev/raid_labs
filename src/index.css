@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-gray-100;
+}
+
+#root {
+  @apply max-w-7xl mx-auto;
+}
+
+.row {
+  @apply flex text-center;
+}
+
+.row div {
+  @apply flex-1;
+}
